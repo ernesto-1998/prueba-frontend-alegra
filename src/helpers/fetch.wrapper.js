@@ -1,4 +1,4 @@
-const { VITE_APP_USER_MAIL, VITE_APP_USER_TOKEN, VITE_APP_ALEGRA_SERVER } = import.meta.env;
+const { VITE_APP_USER_MAIL, VITE_APP_USER_TOKEN } = import.meta.env;
 
 const headerAuth = btoa(`${VITE_APP_USER_MAIL}:${VITE_APP_USER_TOKEN}`)
 
@@ -38,20 +38,4 @@ function handleResponse(response) {
     });
 } 
 
-export const getSellers = async () => {
-    try {
-        const sellers = await fetchWrapper.get(`${VITE_APP_ALEGRA_SERVER}/sellers`);
-        return sellers || [];
-    } catch (error) {
-        console.log(error)
-    }
-};
-
-export const getSellerLikes = async (id) => {
-    try {
-        const seller = await fetchWrapper.get(`${VITE_APP_ALEGRA_SERVER}/sellers/${id}`);
-        return parseInt(`${seller.observations}`) || 0;
-    } catch (error) {
-        console.log(error)
-    }
-};
+export default fetchWrapper
