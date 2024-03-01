@@ -4,15 +4,19 @@
       <base-icon :size="40" :icon-name="'logo'" />
       <span> Imagenes del Mundo </span>
     </div>
-    <select name="" id="">
-      <option value="es">es</option>
-      <option value="en">en</option>
+    <select v-model="selectValue" @change="() => $i18n.locale = selectValue">
+      <option>ES</option>
+      <option>EN</option>
     </select>
   </header>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import BaseIcon from './icons/BaseIcon.vue'
+
+let selectValue = ref("ES")
+
 </script>
 
 <style scoped>
@@ -32,6 +36,10 @@ header {
   box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.75);
+}
+
+select {
+  padding: 5px;
 }
 
 .logo {

@@ -3,9 +3,9 @@
     <form onsubmit="event.preventDefault()">
       <div class="input-wrapper">
         <i class="bx bx-search-alt bx-sm"></i>
-        <input type="text" placeholder="Animales, carros, naturaleza..." v-model="inputValue" />
+        <input type="text" :placeholder="$t('search-input-placeholder')" v-model="inputValue" />
       </div>
-      <base-button :label="'Enviar'" @click-submit="sendValue" />
+      <base-button :label="$t('button-submit')" @click-submit="sendValue" />
     </form>
   </div>
 </template>
@@ -13,21 +13,23 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-
+import {useI18n} from "vue-i18n";
+        
 import BaseButton from '@/components/general/BaseButton.vue'
 import alerts from '@/helpers/alerts'
 
+const i18n = useI18n();
 const router = useRouter()
 
 let inputValue = ref('')
 
 const sendValue = () => {
-  if (inputValue.value === '') {
-    alerts.fail('Error', 'Debes introducir una palabra para buscar...')
+  if (inputValue.value.trim() === '' || inputValue.value === null) {
+    alerts.fail(i18n.t('error'), i18n.t('search-input-validation'))
   } else {
     router.push({
       name: 'images',
-      params: { key: inputValue.value }
+      params: { key: inputValue.value.trim() }
     })
   }
 }

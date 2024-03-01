@@ -1,6 +1,6 @@
 <template>
   <main>
-    <search-title :text="'Busca tus imagenes favoritas!!!'" />
+    <search-title :text="$t('search-home-title')" />
     <search-form />
   </main>
 </template>
