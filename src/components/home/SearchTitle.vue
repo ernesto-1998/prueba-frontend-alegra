@@ -14,21 +14,38 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.search-title {
+h1 {
   position: relative;
-  font-family: var(--text-font);
+  font-family: var(--main-title-font);
+  font-weight: 400;
   color: var(--text-color);
-  font-size: 65px;
-  transition: 0.3s ease-in;
+  font-size: 80px;
 }
 
-.search-title:hover::before {
+h1::before {
   content: '';
   background-color: var(--text-color);
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 0;
   height: 3px;
+  transition: 0.2s ease-in-out;
+}
+
+h1:hover::before {
+  width: 100%;
+}
+
+h1::after {
+  content: '✍️';
+  margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
 }
 </style>

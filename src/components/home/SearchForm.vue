@@ -11,20 +11,22 @@
 </template>
 
 <script setup>
-import BaseButton from '@/components/general/BaseButton.vue'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
+
+import BaseButton from '@/components/general/BaseButton.vue'
+import alerts from '@/helpers/alerts'
 
 const router = useRouter()
 
 let inputValue = ref('')
 
 const sendValue = () => {
-  if(inputValue.value === '') {
-    alert("Debes introducir una palabra para buscar...")
+  if (inputValue.value === '') {
+    alerts.fail('Error', 'Debes introducir una palabra para buscar...')
   } else {
     router.push({
-      name: "images",
+      name: 'images',
       params: { key: inputValue.value }
     })
   }
@@ -55,6 +57,7 @@ form {
 .input-wrapper > i {
   position: absolute;
   margin-left: 5px;
+  color: grey;
 }
 
 .input-wrapper > input {

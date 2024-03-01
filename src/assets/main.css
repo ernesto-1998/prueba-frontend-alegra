@@ -2,6 +2,7 @@
 
 #app {
   max-width: 1440px;
+  margin: auto;
 }
 
 a,
@@ -10,4 +11,8 @@ a,
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
   padding: 3px;
+}
+
+.swal2-popup {
+  font-family: var(--text-font);
 }

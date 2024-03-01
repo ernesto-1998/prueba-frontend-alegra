@@ -1,4 +1,5 @@
 <template>
+  <the-header />
   <router-view v-slot="{ Component }">
     <keep-alive>
       <transition name="slide" mode="out-in">
@@ -11,6 +12,8 @@
 <script setup>
 import { onBeforeMount } from 'vue'
 import { useSellersStore } from '@/stores/sellers'
+
+import TheHeader from './components/TheHeader.vue'
 
 const sellersStore = useSellersStore()
 

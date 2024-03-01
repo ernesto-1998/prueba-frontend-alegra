@@ -13,12 +13,18 @@ import SearchTitle from '@/components/home/SearchTitle.vue'
 <style scoped>
 main {
   height: 100dvh;
-  background-image: url('/home/background-home1.jpg');
-  background-repeat: no-repeat;
+  /* background-image: url('/home/background-home1.jpg');
+  background-repeat: no-repeat; */
   display: flex;
   flex-direction: column;
   gap: 50px;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 0 15px;
+  }
 }
 </style>

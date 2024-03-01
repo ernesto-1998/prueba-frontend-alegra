@@ -14,7 +14,7 @@ const router = createRouter({
       path: '/images/:key',
       name: 'images',
       component: ImagesView
-    },
+    }
   ]
 })
 
