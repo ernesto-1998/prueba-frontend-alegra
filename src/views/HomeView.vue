@@ -1,9 +1,24 @@
 <template>
   <main>
-    <h1>Hello World!</h1>
+    <search-title :text="'Busca tus imagenes favoritas!!!'" />
+    <search-form />
   </main>
 </template>
 
 <script setup>
+import SearchForm from '@/components/home/SearchForm.vue'
+import SearchTitle from '@/components/home/SearchTitle.vue'
 </script>
 
+<style scoped>
+main {
+  height: 100dvh;
+  background-image: url('/home/background-home1.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+</style>

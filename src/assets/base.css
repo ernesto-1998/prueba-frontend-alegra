@@ -1,9 +1,17 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Signika:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --main-color: #FBA834;
-  --second-color: #333A73;
-  --third-color: #387ADF;
-  --last-color: #50C4ED;
+  --main-color: #fba834;
+  --second-color: #333a73;
+  --third-color: #387adf;
+  --last-color: #50c4ed;
+  --text-color: #fff;
+
+  --title-font: 'Signika', sans-serif;
+  --text-font: 'Bree Serif', serif;
+
+  --margin-sm: 0 15px;
 }
 
 *,
@@ -11,16 +19,12 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   line-height: 1.6;
   font-family:
     Inter,
