@@ -4,7 +4,7 @@
       <base-icon :size="40" :icon-name="'logo'" />
       <span> Imagenes del Mundo </span>
     </div>
-    <select v-model="selectValue" @change="() => $i18n.locale = selectValue">
+    <select v-model="selectValue" @change="() => $i18n.locale = selectValue.toLowerCase()">
       <option>ES</option>
       <option>EN</option>
     </select>
@@ -22,6 +22,7 @@ let selectValue = ref("ES")
 <style scoped>
 header {
   position: fixed;
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;

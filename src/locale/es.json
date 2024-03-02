@@ -2,9 +2,16 @@
     "search-home-title": "Busca tus imagenes favoritas!!!",
     "search-input-placeholder": "Animales, carros, naturaleza...",
     "search-input-validation": "Debes introducir una palabra para buscar...",
+
     "button-submit": "Buscar",
     "button-choose": "Escoger",
     "button-vote": "Votar",
+    "button-return": "Regresar",
+
     "images-home-title": "Imagenes encontradas para",
-    "error": "ERROR"
+    "card-seller": "Vendedor",
+
+    "error": "ERROR",
+    "images-not-found": "No se han encontrado imagenes para",
+    "sellers-not-found": "No hay vendedores registrados"
 }

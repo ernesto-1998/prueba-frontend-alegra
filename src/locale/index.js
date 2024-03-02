@@ -4,11 +4,11 @@ import EN from "./en.json";
 import ES from "./es.json";
 
 const i18n = createI18n({
-    locale: "ES",
+    locale: "es",
     legacy: false,
   messages: {
-    EN: EN,
-    ES: ES,
+    en: EN,
+    es: ES,
   }
 })
 
