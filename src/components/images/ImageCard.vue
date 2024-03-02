@@ -3,7 +3,7 @@
         <div class="name-wrapper"> <span>{{ $t('card-seller') }}</span>: {{ props.sellerName }} </div>
         <img :src="props.imageUrl" alt="There is no image to show">
         <div class="button-wrapper">
-            <base-button :label="$t('button-choose')" @click-submit="$emit('click-submit')" />
+            <base-button :label="$t('button-vote')" @click-submit="$emit('click-submit')" />
         </div>
     </div>
 </template>
@@ -28,6 +28,7 @@ const props = defineProps({
 .card-wrapper {
     background-color: var(--second-color);
     font-family: var(--text-font);
+    font-size: 17px;
 }
 
 .name-wrapper {
@@ -35,7 +36,6 @@ const props = defineProps({
     justify-content: center;
     align-items: center;
     padding: 5px;
-    font-weight: 700;
     background-color: var(--third-color);
 }
 

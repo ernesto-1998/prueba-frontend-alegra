@@ -7,8 +7,8 @@
       <div class="images-found" v-if="areImages">
         <h1>{{ `${$t('images-home-title')} "${route.params.key}"` }}</h1>
         <ul class="cards-body">
-          <li v-for="item in data" :key="item.id">
-            <image-card :seller-name="item.name" :image-url="item.image" @click-submit="() => console.log('Enviado')"/>
+          <li v-for="item in data" :key="item.id" :class="{'card-choosed': isChoosed}">
+            <image-card :seller-name="item.name" :image-url="item.image" @click-submit="chooseCard(item.id, item.observations)"/>
           </li>
         </ul>
       </div>
@@ -37,6 +37,7 @@ const router = useRouter();
 const data = ref([]);
 const isLoading = ref(true)
 const areImages = ref(false);
+let isChoosed = ref(false)
 
 onBeforeMount(async () => {
   await sellersStore.setSellers()
@@ -58,6 +59,11 @@ onBeforeMount(async () => {
     alert("no hay vendedores")
   }
 })
+
+const chooseCard = async (id, observations) => {
+  await sellersStore.setSellerPoints(id,(Number.parseInt(observations) + 1))
+  router.push({ name: 'home' })
+}
 
 const sendHome = () => router.push({ name: 'home' })
 
