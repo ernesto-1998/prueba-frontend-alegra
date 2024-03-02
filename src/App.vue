@@ -1,12 +1,14 @@
 <template>
   <the-header />
-  <router-view v-slot="{ Component }">
+  <div class="app-wrapper">
+    <router-view v-slot="{ Component }">
     <keep-alive>
       <transition name="slide" mode="out-in">
         <component :is="Component" />
       </transition>
     </keep-alive>
   </router-view>
+  </div>
 </template>
 
 <script setup>
@@ -17,12 +19,14 @@ import TheHeader from './components/TheHeader.vue'
 
 const sellersStore = useSellersStore()
 
-onBeforeMount(async () => {
-  await sellersStore.setSellers()
-})
+onBeforeMount(async() => await sellersStore.setSellers())
+
 </script>
 
 <style scoped>
+
+
+
 /* Transition */
 
 .slide-enter-active,

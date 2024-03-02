@@ -18,7 +18,7 @@ button {
   padding: 10px 25px;
   margin: 0 auto;
   background-color: var(--third-color);
-  font-family: var(--title-font);
+  font-family: var(--text-font);
   font-size: 20px;
   font-weight: 700;
   color: var(--text-color);

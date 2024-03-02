@@ -16,7 +16,7 @@ const props = defineProps({
 <style scoped>
 h1 {
   position: relative;
-  font-family: var(--main-title-font);
+  font-family: var(--title-font);
   font-weight: 400;
   color: var(--text-color);
   font-size: 80px;

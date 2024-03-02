@@ -3,5 +3,8 @@
     "search-input-placeholder": "Animales, carros, naturaleza...",
     "search-input-validation": "Debes introducir una palabra para buscar...",
     "button-submit": "Buscar",
+    "button-choose": "Escoger",
+    "button-vote": "Votar",
+    "images-home-title": "Imagenes encontradas para",
     "error": "ERROR"
 }

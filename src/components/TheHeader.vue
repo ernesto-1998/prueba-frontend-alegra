@@ -27,7 +27,7 @@ header {
   justify-content: space-between;
   background-color: transparent;
   backdrop-filter: blur(5px);
-  font-family: var(--title-font);
+  font-family: var(--main-title-font);
   font-size: 20px;
   font-weight: 700;
   color: var(--text-color);
