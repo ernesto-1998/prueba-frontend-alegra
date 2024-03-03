@@ -80,7 +80,7 @@ const sendHome = () => router.push({ name: 'home' })
 
 <style scoped>
 main {
-  min-height: 100dvh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +106,16 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
-  padding: 15px;
+  margin-top: 15px;
+  /* backdrop-filter: blur(5px); */
+}
+
+.cards-body li {
+  transition: 0.2s ease-in-out;
+}
+
+.cards-body li:hover {
+  transform: translateY(-10px);
 }
 
 .not-found {

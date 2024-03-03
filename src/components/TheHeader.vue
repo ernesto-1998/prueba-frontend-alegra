@@ -22,11 +22,11 @@ let selectValue = ref('ES')
 header {
   position: fixed;
   top: 0;
+  z-index: 100;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   font-family: var(--main-title-font);
   font-size: 20px;
   font-weight: 700;

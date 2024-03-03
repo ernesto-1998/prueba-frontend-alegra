@@ -25,6 +25,8 @@ onBeforeMount(async () => await sellersStore.setSellers())
 <style scoped>
 .app-wrapper {
   margin-top: 70px;
+  padding-top: 20px;
+  height: cal(100dvh - 70px);
 }
 
 /* Transition */

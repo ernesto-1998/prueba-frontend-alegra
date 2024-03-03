@@ -12,7 +12,7 @@ import SearchTitle from '@/components/home/SearchTitle.vue'
 
 <style scoped>
 main {
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 50px;
