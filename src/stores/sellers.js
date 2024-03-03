@@ -6,13 +6,22 @@ const { VITE_APP_ALEGRA_SERVER } = import.meta.env
 
 export const useSellersStore = defineStore('sellers', {
   state: () => ({
-    sellers: []
+    sellers: [],
+    winner: null,
   }),
   getters: {
     areSellersActive: (state) => state.sellers.length > 0,
-    sellersLength: (state) => state.sellers.length
+    sellersLength: (state) => state.sellers.length,
+    isWinner: (state) => state.winner !== null,
   },
   actions: {
+    setWinner() {
+      this.sellers.forEach(seller => {
+        if(seller?.observations >= 20) {
+          this.winner = {...seller}
+        }
+      })
+    },
     async setSellers() {
       try {
         const sellers = await fetchWrapper.get(`${VITE_APP_ALEGRA_SERVER}/sellers`)
