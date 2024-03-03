@@ -1,12 +1,11 @@
 <template>
   <button :disabled="props.isLoading" @click="$emit('clickSubmit')">
-    <img v-if="props.isLoading" src="/gif/loader2.gif" alt="">
+    <img v-if="props.isLoading" src="/gif/loader2.gif" alt="" />
     {{ props.label }}
   </button>
 </template>
 
 <script setup>
-
 const props = defineProps({
   label: {
     type: String,
@@ -17,7 +16,6 @@ const props = defineProps({
     default: false
   }
 })
-
 </script>
 
 <style scoped>

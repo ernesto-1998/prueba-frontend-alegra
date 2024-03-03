@@ -4,7 +4,7 @@
       <base-icon :size="40" :icon-name="'logo'" />
       <span> Imagenes del Mundo </span>
     </div>
-    <select v-model="selectValue" @change="() => $i18n.locale = selectValue.toLowerCase()">
+    <select v-model="selectValue" @change="() => ($i18n.locale = selectValue.toLowerCase())">
       <option>ES</option>
       <option>EN</option>
     </select>
@@ -12,11 +12,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 import BaseIcon from './icons/BaseIcon.vue'
 
-let selectValue = ref("ES")
-
+let selectValue = ref('ES')
 </script>
 
 <style scoped>

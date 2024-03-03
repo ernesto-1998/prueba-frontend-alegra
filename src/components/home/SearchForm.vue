@@ -13,12 +13,12 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import {useI18n} from "vue-i18n";
-        
+import { useI18n } from 'vue-i18n'
+
 import BaseButton from '@/components/general/BaseButton.vue'
 import alerts from '@/helpers/alerts'
 
-const i18n = useI18n();
+const i18n = useI18n()
 const router = useRouter()
 
 let inputValue = ref('')

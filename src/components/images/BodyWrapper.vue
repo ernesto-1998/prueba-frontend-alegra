@@ -1,12 +1,7 @@
 <template>
-    <div class="body-wrapper">
-    </div>
+  <div class="body-wrapper"></div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

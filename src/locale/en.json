@@ -1,17 +1,17 @@
 {
-    "search-home-title": "Search your favorite photos!!!",
-    "search-input-placeholder": "Animals, cars, nature...",
-    "search-input-validation": "You must introduce a word to search...",
+  "search-home-title": "Search your favorite photos!!!",
+  "search-input-placeholder": "Animals, cars, nature...",
+  "search-input-validation": "You must introduce a word to search...",
 
-    "button-submit": "Search",
-    "button-choose": "Choose",
-    "button-vote": "Vote",
-    "button-return": "Go Back",
+  "button-submit": "Search",
+  "button-choose": "Choose",
+  "button-vote": "Vote",
+  "button-return": "Go Back",
 
-    "images-home-title": "Images found for",
-    "card-seller": "Seller",
+  "images-home-title": "Images found for",
+  "card-seller": "Seller",
 
-    "error": "ERROR",
-    "images-not-found": "No images found for",
-    "sellers-not-found": "No sellers registered"
+  "error": "ERROR",
+  "images-not-found": "No images found for",
+  "sellers-not-found": "No sellers registered"
 }

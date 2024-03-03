@@ -16,7 +16,7 @@ export const useSellersStore = defineStore('sellers', {
     async setSellers() {
       try {
         const sellers = await fetchWrapper.get(`${VITE_APP_ALEGRA_SERVER}/sellers`)
-        if(sellers.length === 0) {
+        if (sellers.length === 0) {
           this.sellers = []
         } else {
           sellers.forEach((seller) => {

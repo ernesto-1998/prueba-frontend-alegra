@@ -8,7 +8,6 @@
 <script setup>
 import SearchForm from '@/components/home/SearchForm.vue'
 import SearchTitle from '@/components/home/SearchTitle.vue'
-
 </script>
 
 <style scoped>
