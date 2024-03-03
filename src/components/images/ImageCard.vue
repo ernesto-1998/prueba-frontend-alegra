@@ -3,7 +3,7 @@
         <div class="name-wrapper"> <span>{{ $t('card-seller') }}</span>: {{ props.sellerName }} </div>
         <img :src="props.imageUrl" alt="There is no image to show">
         <div class="button-wrapper">
-            <base-button :label="$t('button-vote')" @click-submit="$emit('click-submit')" />
+            <base-button :is-loading="props.isLoading" :label="$t('button-vote')" @click-submit="$emit('click-submit')" />
         </div>
     </div>
 </template>
@@ -19,6 +19,10 @@ const props = defineProps({
     imageUrl: {
         type: String,
         required: true,
+    },
+    isLoading: {
+        type: Boolean,
+        default: false
     }
 })
 </script>

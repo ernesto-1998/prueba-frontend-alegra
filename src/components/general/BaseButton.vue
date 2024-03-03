@@ -1,20 +1,31 @@
 <template>
-  <button @click="$emit('clickSubmit')">
+  <button :disabled="props.isLoading" @click="$emit('clickSubmit')">
+    <img v-if="props.isLoading" src="/gif/loader2.gif" alt="">
     {{ props.label }}
   </button>
 </template>
 
 <script setup>
+
 const props = defineProps({
   label: {
     type: String,
     default: 'Search'
+  },
+  isLoading: {
+    type: Boolean,
+    default: false
   }
 })
+
 </script>
 
 <style scoped>
 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   padding: 10px 25px;
   margin: 0 auto;
   background-color: var(--third-color);
@@ -30,5 +41,9 @@ button {
 button:hover {
   cursor: pointer;
   background-color: var(--last-color);
+}
+
+button > img {
+  width: 35px;
 }
 </style>
