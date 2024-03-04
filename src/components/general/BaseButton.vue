@@ -1,5 +1,5 @@
 <template>
-  <button :disabled="props.isLoading" @click="$emit('clickSubmit')">
+  <button :class="`${size}-size`" :disabled="props.isLoading" @click="$emit('clickSubmit')">
     <img v-if="props.isLoading" src="/gif/loader2.gif" alt="" />
     {{ props.label }}
   </button>
@@ -14,6 +14,10 @@ const props = defineProps({
   isLoading: {
     type: Boolean,
     default: false
+  },
+  size: {
+    type: String,
+    default: "md",
   }
 })
 </script>
@@ -24,11 +28,10 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 10px 25px;
+
   margin: 0 auto;
   background-color: var(--third-color);
   font-family: var(--text-font);
-  font-size: 20px;
   font-weight: 700;
   color: var(--text-color);
   border: none;
@@ -43,5 +46,15 @@ button:hover {
 
 button > img {
   width: 35px;
+}
+
+.md-size {
+  padding: 10px 25px;
+  font-size: 20px;
+}
+
+.sm-size {
+  padding: 5px 15px;
+  font-size: 18px;
 }
 </style>

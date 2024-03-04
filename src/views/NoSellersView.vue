@@ -1,12 +1,10 @@
 <template>
-    <main>
-        <h1>{{ $t('sellers-not-found') }}</h1>
-    </main>
+  <main>
+    <h1>{{ $t('sellers-not-found') }}</h1>
+  </main>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style scoped>
 main {
@@ -17,8 +15,8 @@ main {
 }
 
 h1 {
-    font-family: var(--title-font);
-    font-weight: 400;
+  font-family: var(--title-font);
+  font-weight: 400;
   color: var(--text-color);
   font-size: 80px;
   background-color: var(--second-color);

@@ -1,21 +1,22 @@
 <template>
-    <main>
-        <h1 v-if="isWinner">{{ $t('dashboard-end-carrer') }}</h1>
-        <h2 v-if="isWinner"> {{ `${$t('dashboard-winner-title')} ${sellersStore.winner.name}` }} </h2>
-        <sellers-score :sellers="sellersStore.sellers.sort((a, b) => b.observations - a.observations)"/>
-    </main>
+  <main>
+    <h1 v-if="isWinner">{{ $t('dashboard-end-carrer') }}</h1>
+    <h2 v-if="isWinner">{{ `${$t('dashboard-winner-title')} ${sellersStore.winner.name}` }}</h2>
+    <sellers-score
+      :sellers="sellersStore.sellers.sort((a, b) => b.observations - a.observations)"
+    />
+  </main>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useSellersStore } from '@/stores/sellers'; 
+import { ref } from 'vue'
+import { useSellersStore } from '@/stores/sellers'
 
-import SellersScore from "@/components/dashboard/SellersScore.vue"
+import SellersScore from '@/components/dashboard/SellersScore.vue'
 
-const sellersStore = useSellersStore();
+const sellersStore = useSellersStore()
 
-const isWinner = ref(sellersStore.isWinner);
-
+const isWinner = ref(sellersStore.isWinner)
 </script>
 
 <style scoped>
