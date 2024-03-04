@@ -1,9 +1,7 @@
 <template>
   <ul class="sellers-wrapper">
     <li v-for="seller in props.sellers" :key="seller.id">
-      <div class="seller-name">
-        {{ seller.name }}
-      </div>
+      <seller-name :seller-name="seller.name" :size="'md'"/>
       <div class="seller-score">
         {{ `${seller.observations} /20` }}
       </div>
@@ -12,6 +10,8 @@
 </template>
 
 <script setup>
+import SellerName from "@/components/general/SellerName.vue"
+
 const props = defineProps({
   sellers: {
     type: Array,
@@ -22,7 +22,10 @@ const props = defineProps({
 
 <style scoped>
 .sellers-wrapper {
+  /* width: 220px; */
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
   padding: 15px;
@@ -33,13 +36,10 @@ const props = defineProps({
 }
 
 .sellers-wrapper li {
+  width: 200px;
   background-color: var(--third-color);
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 16px;
-}
-
-.seller-name {
-  font-size: 20px;
 }
 
 .seller-score {

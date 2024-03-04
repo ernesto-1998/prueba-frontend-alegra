@@ -1,8 +1,8 @@
 <template>
   <div class="card-wrapper">
     <div class="name-wrapper">
-      <span>{{ $t('card-seller') }}</span
-      >:&nbsp; <p class="seller-name">{{ props.sellerName }}</p>&nbsp; <span class="seller-score"> {{ `${props.sellerScore}/20` }}</span>
+      <span>{{ $t('card-seller') }}:</span
+      >&nbsp; <seller-name :seller-name="props.sellerName" /> &nbsp; <span class="seller-score"> {{ `${props.sellerScore}/20` }}</span>
     </div>
     <img :src="props.imageUrl" alt="There is no image to show" />
     <div class="button-wrapper">
@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+import SellerName from "@/components/general/SellerName.vue"
 import BaseButton from '@/components/general/BaseButton.vue'
 
 const props = defineProps({
@@ -47,7 +48,7 @@ const props = defineProps({
 
 .name-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 5px 8px;
   background-color: var(--third-color);
@@ -58,12 +59,12 @@ const props = defineProps({
   font-weight: 700;
 }
 
-.seller-name {
+/* .seller-name {
   text-overflow: ellipsis; 
     display: inline-block; 
     white-space: nowrap; 
     overflow: hidden; 
-}
+} */
 
 img {
   height: 300px;
