@@ -1,6 +1,7 @@
 <template>
   <main>
     <h1 v-if="isWinner">{{ $t('dashboard-end-carrer') }}</h1>
+    <h1 v-if="!isWinner">{{ $t('dashboard-run-title') }}</h1>
     <h2 v-if="isWinner">{{ `${$t('dashboard-winner-title')} ${sellersStore.winner.name}` }}</h2>
     <sellers-score
       :sellers="sellersStore.sellers.sort((a, b) => b.observations - a.observations)"

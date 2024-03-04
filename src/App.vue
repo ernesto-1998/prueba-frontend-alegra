@@ -12,16 +12,7 @@
 </template>
 
 <script setup>
-// import { onBeforeMount } from 'vue'
-// import { useSellersStore } from '@/stores/sellers'
-
 import TheHeader from './components/TheHeader.vue'
-
-// const sellersStore = useSellersStore()
-
-// onBeforeMount(async () => {
-//   await sellersStore.setSellers()
-// })
 </script>
 
 <style scoped>
@@ -29,7 +20,6 @@ import TheHeader from './components/TheHeader.vue'
   margin-top: 70px;
   padding-top: 20px;
   padding-bottom: 20px;
-  height: calc(100% - 70px);
 }
 
 /* Transition */
