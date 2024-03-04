@@ -2,7 +2,7 @@
   <div class="card-wrapper">
     <div class="name-wrapper">
       <span>{{ $t('card-seller') }}</span
-      >: {{ props.sellerName }}&nbsp; <span class="seller-score"> {{ `${props.sellerScore}/20` }}</span>
+      >:&nbsp; <p class="seller-name">{{ props.sellerName }}</p>&nbsp; <span class="seller-score"> {{ `${props.sellerScore}/20` }}</span>
     </div>
     <img :src="props.imageUrl" alt="There is no image to show" />
     <div class="button-wrapper">
@@ -49,13 +49,20 @@ const props = defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 5px 8px;
   background-color: var(--third-color);
 }
 
 .name-wrapper > span {
   font-family: var(--main-title-font);
   font-weight: 700;
+}
+
+.seller-name {
+  text-overflow: ellipsis; 
+    display: inline-block; 
+    white-space: nowrap; 
+    overflow: hidden; 
 }
 
 img {
