@@ -12,6 +12,7 @@
               :is-loading="isLoadingButton"
               :seller-name="item.name"
               :image-url="item.image"
+              :seller-score= "item.observations"
               @click-submit="voteCard(item.id, item.observations)"
             />
           </li>

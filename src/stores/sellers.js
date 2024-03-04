@@ -16,11 +16,17 @@ export const useSellersStore = defineStore('sellers', {
   },
   actions: {
     setWinner() {
-      this.sellers.forEach((seller) => {
-        if (seller?.observations >= 20) {
-          this.winner = { ...seller }
-        }
-      })
+      // this.sellers.forEach((seller) => {
+      //   if (seller?.observations >= 20 && !this.isWinner) {
+      //     this.winner = { ...seller }
+      //   }
+      // })
+      let win = this.sellers.find(seller => seller.observations >= 20)
+      if(win && !this.isWinner) {
+        this.winner = win
+      } else if (!win) {
+        this.winner = null;
+      }
     },
     async setSellers() {
       try {

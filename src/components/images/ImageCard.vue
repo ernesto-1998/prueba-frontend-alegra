@@ -2,7 +2,7 @@
   <div class="card-wrapper">
     <div class="name-wrapper">
       <span>{{ $t('card-seller') }}</span
-      >: {{ props.sellerName }}
+      >: {{ props.sellerName }}&nbsp; <span class="seller-score"> {{ `${props.sellerScore}/20` }}</span>
     </div>
     <img :src="props.imageUrl" alt="There is no image to show" />
     <div class="button-wrapper">
@@ -24,6 +24,10 @@ const props = defineProps({
     required: true
   },
   imageUrl: {
+    type: String,
+    required: true
+  },
+  sellerScore: {
     type: String,
     required: true
   },

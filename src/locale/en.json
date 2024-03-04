@@ -19,5 +19,6 @@
 
   "error": "ERROR",
   "images-not-found": "No images found for",
-  "sellers-not-found": "No sellers registered"
+  "sellers-not-found": "No sellers registered",
+  "404-not-found": "404 Page Not Found"
 }

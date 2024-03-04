@@ -1,8 +1,8 @@
 <template>
   <main>
-    <h1 v-if="isWinner">{{ $t('dashboard-end-carrer') }}</h1>
-    <h1 v-if="!isWinner">{{ $t('dashboard-run-title') }}</h1>
-    <h2 v-if="isWinner">{{ `${$t('dashboard-winner-title')} ${sellersStore.winner.name}` }}</h2>
+    <h1 v-if="sellersStore.isWinner">{{ $t('dashboard-end-carrer') }}</h1>
+    <h1 v-if="!sellersStore.isWinner">{{ $t('dashboard-run-title') }}</h1>
+    <h2 v-if="sellersStore.isWinner">{{ `${$t('dashboard-winner-title')} ${sellersStore.winner.name}` }}</h2>
     <sellers-score
       :sellers="sellersStore.sellers.sort((a, b) => b.observations - a.observations)"
     />
@@ -10,14 +10,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { useSellersStore } from '@/stores/sellers'
 
 import SellersScore from '@/components/dashboard/SellersScore.vue'
 
 const sellersStore = useSellersStore()
 
-const isWinner = ref(sellersStore.isWinner)
 </script>
 
 <style scoped>
@@ -45,6 +43,17 @@ h2 {
 }
 
 @media (max-width: 1024px) {
+  h1 {
+    font-size: 70px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
   h1 {
     font-size: 50px;
     text-align: center;

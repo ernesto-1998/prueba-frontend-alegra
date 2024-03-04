@@ -20,6 +20,7 @@ import TheHeader from './components/TheHeader.vue'
   margin-top: 70px;
   padding-top: 20px;
   padding-bottom: 20px;
+  /* min-height: calc(100dvh - 70px); */
 }
 
 /* Transition */
