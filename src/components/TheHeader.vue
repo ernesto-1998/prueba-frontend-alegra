@@ -1,21 +1,56 @@
 <template>
   <header>
-    <router-link :to="{name: 'home'}" class="logo">
+    <div class="logo">
       <base-icon :size="40" :icon-name="'logo'" />
       <span> Imagenes del Mundo </span>
-    </router-link>
-    <select v-model="selectValue" @change="() => ($i18n.locale = selectValue.toLowerCase())">
-      <option>ES</option>
-      <option>EN</option>
-    </select>
+    </div>
+    <div class="buttons-wrapper">
+      <base-button :label="labelButton" @click-submit="sendDashboard"/>
+      <select v-model="selectValue" @change="() => ($i18n.locale = selectValue.toLowerCase())">
+        <option>ES</option>
+        <option>EN</option>
+      </select>
+    </div>
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onBeforeMount, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'; 
+import { useI18n } from 'vue-i18n'; 
+
+import BaseButton from './general/BaseButton.vue';
 import BaseIcon from './icons/BaseIcon.vue'
 
+const i18n = useI18n() 
+const router = useRouter()
+const route = useRoute()
 let selectValue = ref('ES')
+const labelButton = ref(null)
+
+onBeforeMount(() => {
+  if(route.name === "dashboard") {
+    labelButton.value = i18n.t('button-home')
+  } else {
+    labelButton.value = i18n.t('button-dashboard')
+  }
+})
+
+watch(() => route.name, () => {
+  if(route.name === "dashboard") {
+    labelButton.value = i18n.t('button-home')
+  } else {
+    labelButton.value = i18n.t('button-dashboard')
+  }
+})
+
+const sendDashboard = () => {
+  if(route.name === "dashboard") {
+    router.push({ name: 'home' })
+  } else {
+    router.push({ name: 'dashboard' })
+  }
+}
 </script>
 
 <style scoped>
@@ -43,6 +78,13 @@ header {
   align-items: center;
   color: var(--text-color);
   gap: 15px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 select {

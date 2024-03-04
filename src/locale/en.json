@@ -7,9 +7,14 @@
   "button-choose": "Choose",
   "button-vote": "Vote",
   "button-return": "Go Back",
+  "button-home": "Home",
+  "button-dashboard": "Score",
 
   "images-home-title": "Images found for",
   "card-seller": "Seller",
+
+  "dashboard-end-carrer": "The race is over",
+  "dashboard-winner-title": "The winner is",
 
   "error": "ERROR",
   "images-not-found": "No images found for",

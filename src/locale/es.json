@@ -7,9 +7,14 @@
   "button-choose": "Escoger",
   "button-vote": "Votar",
   "button-return": "Regresar",
+  "button-home": "Home",
+  "button-dashboard": "Puntaje",
 
   "images-home-title": "Imagenes encontradas para",
   "card-seller": "Vendedor",
+
+  "dashboard-end-carrer": "La carrera ha terminado",
+  "dashboard-winner-title": "El ganador es",
 
   "error": "ERROR",
   "images-not-found": "No se han encontrado imagenes para",
