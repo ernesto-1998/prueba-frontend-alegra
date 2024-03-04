@@ -72,6 +72,7 @@ onBeforeMount(async () => {
 const voteCard = async (id, observations) => {
   isLoadingButton.value = true
   await sellersStore.setSellerPoints(id, Number.parseInt(observations) + 3)
+  sellersStore.setWinner()
   router.push({ name: 'home' })
 }
 

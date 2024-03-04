@@ -10,7 +10,7 @@ export const useSellersStore = defineStore('sellers', {
     winner: null,
   }),
   getters: {
-    areSellersActive: (state) => state.sellers.length > 0,
+    areSellersActive: (state) => state.sellers.length > 1,
     sellersLength: (state) => state.sellers.length,
     isWinner: (state) => state.winner !== null,
   },

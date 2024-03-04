@@ -1,9 +1,9 @@
 <template>
   <header>
-    <div class="logo">
+    <router-link :to="{name: 'home'}" class="logo">
       <base-icon :size="40" :icon-name="'logo'" />
       <span> Imagenes del Mundo </span>
-    </div>
+    </router-link>
     <select v-model="selectValue" @change="() => ($i18n.locale = selectValue.toLowerCase())">
       <option>ES</option>
       <option>EN</option>
@@ -38,13 +38,15 @@ header {
   -moz-box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.75);
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  gap: 15px;
+}
+
 select {
   padding: 5px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
 </style>

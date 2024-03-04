@@ -28,7 +28,7 @@ import TheHeader from './components/TheHeader.vue'
 .app-wrapper {
   margin-top: 70px;
   padding-top: 20px;
-  height: calc(100dvh - 70px);
+  height: calc(100dvh - 76px);
 }
 
 /* Transition */
