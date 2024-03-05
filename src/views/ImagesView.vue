@@ -47,7 +47,6 @@ const areImages = ref(false)
 let isChoosed = ref(false)
 
 onBeforeMount(async () => {
-  await sellersStore.setSellers()
   if (sellersStore.sellersLength) {
     // Pixabay api only accept a minimun of 3 pagination images, so sellersLength must be higher than 2
     const res = await fetchImages(

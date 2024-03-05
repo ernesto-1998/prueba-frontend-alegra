@@ -20,9 +20,9 @@ main {
   align-items: center;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   main {
     padding: 0 15px;
   }
-}
+} */
 </style>

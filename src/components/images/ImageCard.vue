@@ -59,13 +59,6 @@ const props = defineProps({
   font-weight: 700;
 }
 
-/* .seller-name {
-  text-overflow: ellipsis; 
-    display: inline-block; 
-    white-space: nowrap; 
-    overflow: hidden; 
-} */
-
 img {
   height: 300px;
 }

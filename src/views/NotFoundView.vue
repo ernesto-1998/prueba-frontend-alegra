@@ -30,11 +30,7 @@
     width: 400px;
   }
   
-  @media (max-width: 1024px) {
-    main {
-      padding: 15px;
-    }
-
+  @media (max-width: 768px) {
     h1 {
       font-size: 50px;
       text-align: center;

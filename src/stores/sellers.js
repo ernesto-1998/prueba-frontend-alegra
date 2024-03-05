@@ -12,20 +12,46 @@ export const useSellersStore = defineStore('sellers', {
   getters: {
     areSellersActive: (state) => state.sellers.length > 1,
     sellersLength: (state) => state.sellers.length,
-    isWinner: (state) => state.winner !== null
+    isWinner: (state) => state.winner !== null,
+    totalPoints: (state) => state.sellers.reduce((counter, seller) => {
+      return counter + Number.parseInt(seller.observations)
+    }, 0)
   },
   actions: {
-    setWinner() {
-      // this.sellers.forEach((seller) => {
-      //   if (seller?.observations >= 20 && !this.isWinner) {
-      //     this.winner = { ...seller }
-      //   }
-      // })
+    async setWinner() {
       let win = this.sellers.find(seller => seller.observations >= 20)
+      this.winner = win
       if(win && !this.isWinner) {
-        this.winner = win
+        console.log(this.winner, this.isWinner)
+        // this.winner["invoice"] = await this.createInvoice(win)
       } else if (!win) {
         this.winner = null;
+      }
+    },
+    async createInvoice(winner) {
+      const date = new Date();
+
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      
+      const formattedDate = `${year}-${month}-${day}`;
+      try {
+        const invoice = await fetchWrapper.post(`${VITE_APP_ALEGRA_SERVER}/invoices`, { 
+          items: [{
+            id: 1,
+            name: "image",
+            price: 0,
+            quantity: this.totalPoints,
+          }],
+          client: 1,
+          dueDate: formattedDate,
+          date: formattedDate,
+          seller: winner.id,
+         })
+         return invoice
+      } catch (error) {
+        console.log(error)
       }
     },
     async setSellers() {
