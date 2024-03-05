@@ -19,6 +19,11 @@ Primeramente se utiliza el campo "observations" de cada vendedor para guardar el
 
 1. La vista de imagenes posee el marcador de cada vendedor en la card misma, pero para una vista más detallada y con más información puede acceder al dashboard por medio del boton "Score/Puntaje" presente en el header, este cargara la DashboardView donde se encuentra el puntaje de cada vendedor en orden descendente. Si la carrera ya ha terminado, la factura de venta será cargada en esta vista.
 
+## Info Extra
+
+1. Como pueden observar, la app esta hecha con vue puro, ya que al ser una prueba técnica decidi no usar ningún framework UI y hacer todo a mano, esto para que puedan ver mi forma de trabajar el css y los modulos de vue, y analizar que cosas puedo mejorar o consejos que me puedan dar.
+1. El archivo con las variables de entorno no estará presente en el repositorio, más bien será adjuntado en el correo donde enviaré los links para acceder a la app desplegada.
+
 ## Project Setup
 
 ```sh
