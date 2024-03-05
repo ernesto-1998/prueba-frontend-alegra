@@ -29,7 +29,7 @@ const props = defineProps({
     required: true
   },
   sellerScore: {
-    type: String,
+    type: [String, Number],
     required: true
   },
   isLoading: {

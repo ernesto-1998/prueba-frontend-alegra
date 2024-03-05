@@ -1,14 +1,23 @@
 # images_world_alegraApp
 
-This template should help get you started developing with Vue 3 in Vite.
+Este es un proyecto que permite buscar imagenes y asignarlas a los distintos vendedores que posea el usuario con las credenciales de la api de Alegra, para el buscador de imagenes se utiliza la API de Pixabay, y para toda la gestión de facturación y vendedores se utiliza la API de alegra.
 
-## Recommended IDE Setup
+## Validaciones
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Primeramente se utiliza el campo "observations" de cada vendedor para guardar el puntaje, si este campo no existe o posee un valor que no es un entero, la aplicación de forma local le asignara un valor de 0 y lo enviara cuando sea escogido (sumandole 3). Existen más validaciones:
+1. Si no hay vendedores se mandará en automático a una vista de NO-SELLERS (Igualmente si solo hay un vendedor registrado, ya que para que exista una carrera deben haber 2 como mínimo).
+1. Si se trata de acceder a una vista que no existe se dispará en automatico la página de 404 not found.
+1. Si la carrera ha terminado se mandará en automático a la página de dashboard donde estarán los resultados (Para reiniciar la carrera hay que borrar manualmente las facturas creadas y actualizar las observations de cada vendedor involucrado).
+1. No se puede acceder de manera manual a la página de no-sellers si hay vendedores existentes.
 
-## Customize configuration
+## Caracteristicas
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+1. La App esta internacionalizada, es decir esta disponible en ingles y en español (Por defecto se carga en español, pero puede modificarse con el select del header).
+1. Posee responsive design.
+
+## Instrucciones
+
+1. La vista de imagenes posee el marcador de cada vendedor en la card misma, pero para una vista más detallada y con más información puede acceder al dashboard por medio del boton "Score/Puntaje" presente en el header, este cargara la DashboardView donde se encuentra el puntaje de cada vendedor en orden descendente. Si la carrera ya ha terminado, la factura de venta será cargada en esta vista.
 
 ## Project Setup
 
