@@ -2,6 +2,8 @@ import { defineStore } from 'pinia'
 import fetchWrapper from '@/helpers/fetch.wrapper'
 import validateInteger from '@/utils/validate.integer'
 
+import { useInvoiceStore } from './invoice'
+
 const { VITE_APP_ALEGRA_SERVER } = import.meta.env
 
 export const useSellersStore = defineStore('sellers', {
@@ -19,39 +21,17 @@ export const useSellersStore = defineStore('sellers', {
   },
   actions: {
     async setWinner() {
+      const invoiceStore = useInvoiceStore()
       let win = this.sellers.find(seller => seller.observations >= 20)
-      this.winner = win
-      if(win && !this.isWinner) {
-        console.log(this.winner, this.isWinner)
-        // this.winner["invoice"] = await this.createInvoice(win)
-      } else if (!win) {
-        this.winner = null;
-      }
-    },
-    async createInvoice(winner) {
-      const date = new Date();
-
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      
-      const formattedDate = `${year}-${month}-${day}`;
-      try {
-        const invoice = await fetchWrapper.post(`${VITE_APP_ALEGRA_SERVER}/invoices`, { 
-          items: [{
-            id: 1,
-            name: "image",
-            price: 0,
-            quantity: this.totalPoints,
-          }],
-          client: 1,
-          dueDate: formattedDate,
-          date: formattedDate,
-          seller: winner.id,
-         })
-         return invoice
-      } catch (error) {
-        console.log(error)
+      this.winner = win ? win : null
+      const invoices = await invoiceStore.getInvoices()
+      invoiceStore.validateInvoice(win.id, invoices)
+      if(this.isWinner && !invoiceStore.isInvoiceActive) {
+        this.winner["invoice"] = await invoiceStore.createInvoice(win, this.totalPoints)
+      } else if (this.isWinner && invoiceStore.isInvoiceActive) {
+        this.winner["invoice"] = invoiceStore.invoice;
+      } else {
+        this.winner = null
       }
     },
     async setSellers() {
