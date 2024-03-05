@@ -22,5 +22,12 @@
   "sellers-not-found": "No sellers registered",
   "404-not-found": "404 Page Not Found",
 
-  "invoice-title": "Sales invoice"
+  "invoice-title": "Sales invoice",
+  "invoice-client": "Client",
+  "invoice-date": "Date of issue",
+  "invoice-seller": "Seller",
+  "invoice-product": "Product",
+  "invoice-table-name": "Name",
+  "invoice-table-price": "Price",
+  "invoice-table-quantity": "Quantity"
 }

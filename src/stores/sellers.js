@@ -23,12 +23,15 @@ export const useSellersStore = defineStore('sellers', {
     async setWinner() {
       const invoiceStore = useInvoiceStore()
       let win = this.sellers.find(seller => seller.observations >= 20)
-      this.winner = win ? win : null
-      const invoices = await invoiceStore.getInvoices()
-      invoiceStore.validateInvoice(win.id, invoices)
-      if(this.isWinner && !invoiceStore.isInvoiceActive) {
-        this.winner["invoice"] = await invoiceStore.createInvoice(win, this.totalPoints)
-      } else if (this.isWinner && invoiceStore.isInvoiceActive) {
+      if(win) {
+        const invoices = await invoiceStore.getInvoices()
+        invoiceStore.validateInvoice(win.id, invoices)
+      }
+      if(win && !invoiceStore.isInvoiceActive) {
+        const invoiceCreated = await invoiceStore.createInvoice(win, this.totalPoints)
+        this.winner = {...win, invoice: invoiceCreated}
+      } else if (win && invoiceStore.isInvoiceActive) {
+        this.winner = win
         this.winner["invoice"] = invoiceStore.invoice;
       } else {
         this.winner = null

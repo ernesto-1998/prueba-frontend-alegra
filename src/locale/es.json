@@ -22,5 +22,12 @@
   "sellers-not-found": "No hay vendedores registrados",
   "404-not-found": "404 Página No Encontrada",
 
-  "invoice-title": "Factura de venta"
+  "invoice-title": "Factura de venta",
+  "invoice-client": "Cliente",
+  "invoice-date": "Fecha de emisión",
+  "invoice-seller": "Vendedor",
+  "invoice-product": "Producto",
+  "invoice-table-name": "Nombre",
+  "invoice-table-price": "Precio",
+  "invoice-table-quantity": "Cantidad"
 }

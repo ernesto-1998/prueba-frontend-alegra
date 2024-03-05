@@ -61,6 +61,5 @@ const props = defineProps({
   height: 30px;
   background-color: var(--main-color);
   border-radius: 50px;
-  transform: rotate(7deg);
 }
 </style>

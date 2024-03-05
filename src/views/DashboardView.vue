@@ -7,9 +7,10 @@
       :sellers="sellersStore.sellers.sort((a, b) => b.observations - a.observations)"
     />
     <h1 v-if="sellersStore.isWinner">{{ $t('invoice-title') }}</h1>
-    <!-- <div v-if="sellersStore.isWinner"> -->
-      <sales-invoice :invoice="sellersStore.winner.invoice" :is-show="sellersStore.isWinner"/>
-    <!-- </div> -->
+    <div v-if="sellersStore.isWinner">
+
+      <sales-invoice :invoice="sellersStore.winner?.invoice"/>
+    </div>
   </main>
 </template>
 
@@ -19,8 +20,6 @@ import { useSellersStore } from '@/stores/sellers'
 import SellersScore from '@/components/dashboard/SellersScore.vue'
 import SalesInvoice from '@/components/dashboard/SalesInvoice.vue'
 const sellersStore = useSellersStore()
-
-console.log(sellersStore.winner)
 
 </script>
 
