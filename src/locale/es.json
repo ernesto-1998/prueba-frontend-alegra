@@ -20,5 +20,7 @@
   "error": "ERROR",
   "images-not-found": "No se han encontrado imagenes para",
   "sellers-not-found": "No hay vendedores registrados",
-  "404-not-found": "404 Página No Encontrada"
+  "404-not-found": "404 Página No Encontrada",
+
+  "invoice-title": "Factura de venta"
 }

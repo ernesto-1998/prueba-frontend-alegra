@@ -46,7 +46,7 @@ export const useSellersStore = defineStore('sellers', {
             }
           })
           this.sellers = [...sellers]
-          this.setWinner()
+          await this.setWinner()
         }
       } catch (error) {
         console.log(error)
